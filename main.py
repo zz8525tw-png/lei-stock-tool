@@ -11,7 +11,7 @@ st.set_page_config(page_title="雷兄專屬股票分析儀", layout="wide")
 with st.sidebar:
     st.header("🔍 搜尋與設定")
     ticker_input = st.text_input("請輸入股票代號 (例: 2330)", "2330")
-    period_choice = st.selectbox("選擇分析週期", ["1y", "6m", "3m"], index=0)
+    period_choice = st.selectbox("選擇分析週期", ["1d", "1m", "3y"], index=0)
     submit = st.button("執行全方位分析")
     st.write("---")
     st.write("⚒️ 開發者：[雷兄]")
@@ -102,3 +102,4 @@ if submit or ticker_input:
     except Exception as e:
         # 針對 YFRateLimitError 的親切提示
         st.warning("⚠️ 目前 Yahoo 數據庫載入頻率過高，請等候 10 秒後再點擊一次「執行全方位分析」。")
+
